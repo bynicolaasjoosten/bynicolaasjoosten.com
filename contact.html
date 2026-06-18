@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Nicolaas Joosten</title>
+  <meta name="description" content="Get in touch with Nicolaas Joosten for photography and video work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;400&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__brand">
+      <img src="img/logo-white.png" alt="Nicolaas Joosten" />
+    </a>
+    <ul class="nav__links">
+      <li><a href="films.html">Films</a></li>
+      <li class="nav__dropdown">
+        <a href="photography/fashion.html">Photography</a>
+        <ul class="nav__dropdown-menu">
+          <li><a href="photography/fashion.html">Fashion</a></li>
+          <li><a href="photography/shows.html">Shows</a></li>
+          <li><a href="photography/portraits.html">Portraits</a></li>
+          <li><a href="photography/street.html">Street</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="nav__overlay">
+    <a href="films.html">Films</a>
+    <a href="photography/fashion.html">Photography</a>
+    <div class="nav__overlay-sub">
+      <a href="photography/fashion.html">Fashion</a>
+      <a href="photography/shows.html">Shows</a>
+      <a href="photography/portraits.html">Portraits</a>
+      <a href="photography/street.html">Street</a>
+    </div>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <div class="nav__overlay-social">
+      <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <p class="page-hero__label">Say hello</p>
+    <h1 class="page-hero__title">Let's work<br>together.</h1>
+  </div>
+
+  <!-- CONTACT LAYOUT -->
+  <section class="section">
+    <div class="contact-layout">
+
+      <!-- Info -->
+      <div>
+        <p class="section__body">
+          Interested in working together? Please fill in the form or reach out directly. The more detail you share about your project, the better I can help.
+        </p>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">Email</p>
+          <p class="contact-info__value">
+            <a href="mailto:bynicolaasjoosten@gmail.com">bynicolaasjoosten@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">Phone / WhatsApp</p>
+          <p class="contact-info__value">
+            <a href="tel:+31681239804">+31 6 81 23 98 04</a>
+          </p>
+        </div>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">Based in</p>
+          <p class="contact-info__value">Arnhem &amp; Amsterdam, The Netherlands</p>
+        </div>
+
+        <div class="contact-info__item">
+          <p class="contact-info__label">KVK</p>
+          <p class="contact-info__value">91268087</p>
+        </div>
+
+        <div class="contact-info__item" style="margin-top: var(--space-5);">
+          <p class="contact-info__label">Social</p>
+          <p class="contact-info__value">
+            <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">@bynicolaasjoosten</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form__group">
+          <label class="form__label" for="name">Name</label>
+          <input class="form__input" type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="email">Email</label>
+          <input class="form__input" type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="subject">Subject</label>
+          <input class="form__input" type="text" id="subject" name="subject" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="message">Message</label>
+          <textarea class="form__textarea" id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__col">
+      <p class="footer__text">
+        bynicolaasjoosten@gmail.com<br />
+        KVK: 91268087<br />
+        Arnhem, The Netherlands
+      </p>
+    </div>
+    <div class="footer__col footer__col--center">
+      <div class="footer__social">
+        <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="footer__col footer__col--right">
+      <div class="footer__logo">
+        <img src="img/logo-white.png" alt="Nicolaas Joosten" />
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

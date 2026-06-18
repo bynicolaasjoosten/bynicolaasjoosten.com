@@ -1,0 +1,30 @@
+:root {
+  /* Colors */
+  --bg-base:       #080808;
+  --bg-surface:    #111111;
+  --bg-card:       #181818;
+  --bg-raised:     #212121;
+
+  --border-subtle:  rgba(255, 255, 255, 0.07);
+  --border-default: rgba(255, 255, 255, 0.12);
+  --border-strong:  rgba(255, 255, 255, 0.22);
+
+  --text-primary:   #FFFFFF;
+  --text-secondary: #9A9A9A;
+  --text-muted:     #555555;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-label:   'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  16px;
+  --space-4:  24px;
+  --space-5:  40px;
+  --space-6:  64px;
+  --space-7:  96px;
+  --space-8:  128px;
+}

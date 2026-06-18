@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Nicolaas Joosten</title>
+  <meta name="description" content="Nicolaas Joosten, 22, photographer and content creator focusing on fashion, portraits and music events. Based in Arnhem &amp; Amsterdam." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;400&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__brand">
+      <img src="img/logo-white.png" alt="Nicolaas Joosten" />
+    </a>
+    <ul class="nav__links">
+      <li><a href="films.html">Films</a></li>
+      <li class="nav__dropdown">
+        <a href="photography/fashion.html">Photography</a>
+        <ul class="nav__dropdown-menu">
+          <li><a href="photography/fashion.html">Fashion</a></li>
+          <li><a href="photography/shows.html">Shows</a></li>
+          <li><a href="photography/portraits.html">Portraits</a></li>
+          <li><a href="photography/street.html">Street</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="nav__overlay">
+    <a href="films.html">Films</a>
+    <a href="photography/fashion.html">Photography</a>
+    <div class="nav__overlay-sub">
+      <a href="photography/fashion.html">Fashion</a>
+      <a href="photography/shows.html">Shows</a>
+      <a href="photography/portraits.html">Portraits</a>
+      <a href="photography/street.html">Street</a>
+    </div>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <div class="nav__overlay-social">
+      <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <p class="page-hero__label">Who I am</p>
+    <h1 class="page-hero__title">About me.</h1>
+  </div>
+
+  <!-- BIO -->
+  <section class="section">
+    <div class="meet">
+      <div class="meet__text">
+        <p class="section__label">Biography</p>
+        <h2 class="section__title">Nicolaas<br>Joosten.</h2>
+        <p class="section__body">
+          I'm Nicolaas Joosten, 22 years old, a photographer and content creator focusing on fashion, portraits and (music) events. Studying creative business in Amsterdam. Passionate about capturing the right moments and joy in photos.
+        </p>
+        <a href="contact.html" class="btn">Get in touch</a>
+      </div>
+      <div class="meet__image">
+        <img src="img/portrait-2.jpg" alt="Nicolaas Joosten" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO PAIR -->
+  <section class="section section--wide" style="padding-top: 0; border-bottom: none;">
+    <div class="about-grid" style="margin: 0;">
+      <img src="img/about-1.jpg" alt="Behind the scenes" loading="lazy" />
+      <img src="img/about-2.jpg" alt="On location" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="about-cta">
+      <div>
+        <p class="section__label">Work together</p>
+        <h2 class="section__title">Let's create!</h2>
+      </div>
+      <div>
+        <p class="section__body">
+          Need new brand photos or a video? Let's collaborate for outstanding results. With a focus on storytelling, we can capture your brand's essence and engage your audience. Whether for a campaign, social media, or your website, I can help you create THE visuals. Contact me to discuss.
+        </p>
+        <a href="contact.html" class="btn">Contact me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__col">
+      <p class="footer__text">
+        bynicolaasjoosten@gmail.com<br />
+        KVK: 91268087<br />
+        Arnhem, The Netherlands
+      </p>
+    </div>
+    <div class="footer__col footer__col--center">
+      <div class="footer__social">
+        <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="footer__col footer__col--right">
+      <div class="footer__logo">
+        <img src="img/logo-white.png" alt="Nicolaas Joosten" />
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
