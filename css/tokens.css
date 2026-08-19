@@ -14,9 +14,9 @@
   --text-muted:     #555555;
 
   /* Typography */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-label:   'Space Grotesk', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-label:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* Spacing */
   --space-1:  4px;

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Dashboard — bynicolaasjoosten.com</title>
+  <link rel="stylesheet" href="css/tokens.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg-base); color: var(--text-secondary); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 100; font-size: 0.9rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    .dash-header { padding: 40px 48px 32px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; }
+    .dash-header h1 { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.7rem; font-weight: 100; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-muted); }
+    .dash-header .site-link { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-subtle); padding: 8px 16px; transition: color 0.2s, border-color 0.2s; }
+    .dash-header .site-link:hover { color: var(--text-primary); border-color: var(--border-strong); }
+
+    .dash-body { padding: 48px; display: flex; flex-direction: column; gap: 48px; }
+
+    /* Stats row */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+    .stat { background: var(--bg-card); padding: 28px 24px; }
+    .stat__number { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  font-size: 3rem; font-weight: 100; color: var(--text-primary); line-height: 1; margin-bottom: 8px; }
+    .stat__label { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* Section */
+    .dash-section__title { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+
+    /* Pages table */
+    .pages-table { width: 100%; border-collapse: collapse; }
+    .pages-table th { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--text-muted); text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); }
+    .pages-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); font-size: 0.85rem; vertical-align: middle; }
+    .pages-table tr:last-child td { border-bottom: none; }
+    .pages-table tr:hover td { background: var(--bg-card); }
+    .page-name { color: var(--text-primary); font-weight: 100; }
+    .badge { display: inline-block; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; padding: 3px 10px; border: 1px solid; border-radius: 2px; }
+    .badge--done { color: #6fcf97; border-color: rgba(111,207,151,0.3); }
+    .badge--images { color: #f2c94c; border-color: rgba(242,201,76,0.3); }
+    .badge--todo { color: var(--text-muted); border-color: var(--border-subtle); }
+    .open-link { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .open-link:hover { color: var(--text-primary); }
+
+    /* Images grid */
+    .img-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; }
+    .img-cell { background: var(--bg-card); aspect-ratio: 3/4; overflow: hidden; position: relative; }
+    .img-cell img { width: 100%; height: 100%; object-fit: cover; }
+    .img-cell__empty { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+    .img-cell__empty span { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); }
+    .img-cell__label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(8,8,8,0.8); padding: 6px 8px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* Films list */
+    .films-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .film-item { background: var(--bg-card); padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .film-item__name { color: var(--text-secondary); font-size: 0.85rem; }
+    .film-item__thumb { width: 64px; height: 36px; object-fit: cover; background: var(--bg-raised); flex-shrink: 0; }
+
+    /* Todo list */
+    .todo-list { display: flex; flex-direction: column; gap: 2px; }
+    .todo-item { background: var(--bg-card); padding: 16px 20px; display: flex; align-items: center; gap: 16px; }
+    .todo-item__check { width: 16px; height: 16px; border: 1px solid var(--border-default); border-radius: 2px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #6fcf97; }
+    .todo-item__text { font-size: 0.85rem; color: var(--text-secondary); }
+    .todo-item--done .todo-item__text { color: var(--text-muted); text-decoration: line-through; }
+
+    @media (max-width: 1100px) { .stats { grid-template-columns: repeat(2,1fr); } .img-grid { grid-template-columns: repeat(4,1fr); } .films-list { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 700px) { .dash-body { padding: 24px; } .dash-header { padding: 24px; } .img-grid { grid-template-columns: repeat(3,1fr); } .films-list { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="dash-header">
+    <h1>bynicolaasjoosten.com — Site Dashboard</h1>
+    <a href="index.html" class="site-link">Open site →</a>
+  </div>
+
+  <div class="dash-body">
+
+    <!-- Stats -->
+    <div>
+      <p class="dash-section__title">Overview</p>
+      <div class="stats">
+        <div class="stat"><div class="stat__number">11</div><div class="stat__label">Pages</div></div>
+        <div class="stat"><div class="stat__number">6</div><div class="stat__label">Film pages</div></div>
+        <div class="stat"><div class="stat__number">12</div><div class="stat__label">Photos live</div></div>
+        <div class="stat"><div class="stat__number">4</div><div class="stat__label">Photo galleries</div></div>
+      </div>
+    </div>
+
+    <!-- Pages -->
+    <div>
+      <p class="dash-section__title">Pages</p>
+      <table class="pages-table">
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Path</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="page-name">Home</td><td>index.html</td><td><span class="badge badge--images">Needs hero image</span></td><td>Add img/hero.jpg</td><td><a href="index.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">Films</td><td>films.html</td><td><span class="badge badge--images">Needs thumbnails</span></td><td>Add img/films/*.jpg for each project</td><td><a href="films.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">About</td><td>about.html</td><td><span class="badge badge--images">Needs portraits</span></td><td>Add img/portrait-2.jpg, about-1.jpg, about-2.jpg</td><td><a href="about.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">Contact</td><td>contact.html</td><td><span class="badge badge--todo">Formspree ID needed</span></td><td>Replace YOUR_FORM_ID in contact.html</td><td><a href="contact.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">Fashion</td><td>photography/fashion.html</td><td><span class="badge badge--done">Live — 12 photos</span></td><td>The Society Shop shoot</td><td><a href="photography/fashion.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">Shows</td><td>photography/shows.html</td><td><span class="badge badge--todo">No images yet</span></td><td>Drop into img/shows/</td><td><a href="photography/shows.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">Portraits</td><td>photography/portraits.html</td><td><span class="badge badge--todo">No images yet</span></td><td>Drop into img/portraits/</td><td><a href="photography/portraits.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">Street</td><td>photography/street.html</td><td><span class="badge badge--todo">No images yet</span></td><td>Drop into img/street/</td><td><a href="photography/street.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">The Society Shop</td><td>films/the-society-shop.html</td><td><span class="badge badge--done">Live</span></td><td>Add video embed when ready</td><td><a href="films/the-society-shop.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">Pathé</td><td>films/pathe.html</td><td><span class="badge badge--images">Needs thumbnail</span></td><td>Add img/films/pathe.jpg</td><td><a href="films/pathe.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">DERM x The Possibilities</td><td>films/derm-the-possibilities.html</td><td><span class="badge badge--images">Needs thumbnail</span></td><td>Add img/films/derm-the-possibilities.jpg</td><td><a href="films/derm-the-possibilities.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">AirUp</td><td>films/airup.html</td><td><span class="badge badge--images">Needs thumbnail</span></td><td>Add img/films/airup.jpg</td><td><a href="films/airup.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">Nooit Alleen</td><td>films/nooit-alleen.html</td><td><span class="badge badge--images">Needs thumbnail</span></td><td>Add img/films/nooit-alleen.jpg</td><td><a href="films/nooit-alleen.html" class="open-link">Open →</a></td></tr>
+          <tr><td class="page-name">OLIVER | Club Novia</td><td>films/oliver-club-novia.html</td><td><span class="badge badge--images">Needs thumbnail</span></td><td>Add img/films/oliver-club-novia.jpg</td><td><a href="films/oliver-club-novia.html" class="open-link">Open →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Live photos -->
+    <div>
+      <p class="dash-section__title">Live images — Fashion grid (12)</p>
+      <div class="img-grid">
+        <div class="img-cell"><img src="img/fashion/01.jpg" alt="01" /><div class="img-cell__label">fashion/01</div></div>
+        <div class="img-cell"><img src="img/fashion/02.jpg" alt="02" /><div class="img-cell__label">fashion/02</div></div>
+        <div class="img-cell"><img src="img/fashion/03.jpg" alt="03" /><div class="img-cell__label">fashion/03</div></div>
+        <div class="img-cell"><img src="img/fashion/04.jpg" alt="04" /><div class="img-cell__label">fashion/04</div></div>
+        <div class="img-cell"><img src="img/fashion/05.jpg" alt="05" /><div class="img-cell__label">fashion/05</div></div>
+        <div class="img-cell"><img src="img/fashion/06.jpg" alt="06" /><div class="img-cell__label">fashion/06</div></div>
+        <div class="img-cell"><img src="img/fashion/07.jpg" alt="07" /><div class="img-cell__label">fashion/07</div></div>
+        <div class="img-cell"><img src="img/fashion/08.jpg" alt="08" /><div class="img-cell__label">fashion/08</div></div>
+        <div class="img-cell"><img src="img/fashion/09.jpg" alt="09" /><div class="img-cell__label">fashion/09</div></div>
+        <div class="img-cell"><img src="img/fashion/10.jpg" alt="10" /><div class="img-cell__label">fashion/10</div></div>
+        <div class="img-cell"><img src="img/fashion/11.jpg" alt="11" /><div class="img-cell__label">fashion/11</div></div>
+        <div class="img-cell"><img src="img/fashion/12.jpg" alt="12" /><div class="img-cell__label">fashion/12</div></div>
+      </div>
+    </div>
+
+    <!-- To-do -->
+    <div>
+      <p class="dash-section__title">To-do checklist</p>
+      <div class="todo-list">
+        <div class="todo-item todo-item--done"><div class="todo-item__check">✓</div><div class="todo-item__text">Build all HTML pages</div></div>
+        <div class="todo-item todo-item--done"><div class="todo-item__check">✓</div><div class="todo-item__text">Design system — tokens.css + main.css</div></div>
+        <div class="todo-item todo-item--done"><div class="todo-item__check">✓</div><div class="todo-item__text">Mobile nav + hamburger menu</div></div>
+        <div class="todo-item todo-item--done"><div class="todo-item__check">✓</div><div class="todo-item__text">Logo added (logo-white.png)</div></div>
+        <div class="todo-item todo-item--done"><div class="todo-item__check">✓</div><div class="todo-item__text">Fashion gallery live — 12 photos (The Society Shop)</div></div>
+        <div class="todo-item todo-item--done"><div class="todo-item__check">✓</div><div class="todo-item__text">Film pages: The Society Shop, Pathé, DERM, AirUp, Nooit Alleen, OLIVER</div></div>
+        <div class="todo-item"><div class="todo-item__check"></div><div class="todo-item__text">Push to GitHub + enable GitHub Pages</div></div>
+        <div class="todo-item"><div class="todo-item__check"></div><div class="todo-item__text">Add hero image (img/hero.jpg)</div></div>
+        <div class="todo-item"><div class="todo-item__check"></div><div class="todo-item__text">Add film thumbnails (img/films/*.jpg) for Pathé, DERM, AirUp, Nooit Alleen, OLIVER</div></div>
+        <div class="todo-item"><div class="todo-item__check"></div><div class="todo-item__text">Add shows, portraits, street photos</div></div>
+        <div class="todo-item"><div class="todo-item__check"></div><div class="todo-item__text">Add about page portraits (portrait-2.jpg, about-1.jpg, about-2.jpg)</div></div>
+        <div class="todo-item"><div class="todo-item__check"></div><div class="todo-item__text">Set up Formspree and add form ID to contact.html</div></div>
+        <div class="todo-item"><div class="todo-item__check"></div><div class="todo-item__text">Add video embeds to film pages</div></div>
+        <div class="todo-item"><div class="todo-item__check"></div><div class="todo-item__text">Connect custom domain (bynicolaasjoosten.com)</div></div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
