@@ -1,4 +1,4 @@
-const hamburger = document.querySelector('.nav__hamburger');
+const hamburger = document.querySelector('.topnav__hamburger');
 const overlay   = document.querySelector('.nav__overlay');
 
 if (hamburger && overlay) {
