@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Society Shop — Nicolaas Joosten</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .film-hero { position: relative; height: 70vh; overflow: hidden; border-bottom: 1px solid var(--border-subtle); }
+    .film-hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+    .film-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, rgba(8,8,8,0.1) 60%, transparent 100%); }
+    .film-hero__content { position: absolute; bottom: var(--space-7); left: var(--space-6); }
+    .film-info { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-8); }
+    .film-meta { display: flex; flex-direction: column; gap: var(--space-4); }
+    .film-meta__item {}
+    .film-meta__label { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-1); }
+    .film-meta__value { color: var(--text-secondary); font-weight: 300; }
+    .back-link { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-6); transition: color 0.2s; }
+    .back-link:hover { color: var(--text-primary); }
+    @media (max-width: 900px) { .film-info { grid-template-columns: 1fr; } .film-hero__content { left: var(--space-4); bottom: var(--space-6); } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav__brand"><img src="../img/logo-white.png" alt="Nicolaas Joosten" /></a>
+    <ul class="nav__links">
+      <li><a href="../films.html" class="active">Films</a></li>
+      <li class="nav__dropdown">
+        <a href="../photography/fashion.html">Photography</a>
+        <ul class="nav__dropdown-menu">
+          <li><a href="../photography/fashion.html">Fashion</a></li>
+          <li><a href="../photography/shows.html">Shows</a></li>
+          <li><a href="../photography/portraits.html">Portraits</a></li>
+          <li><a href="../photography/street.html">Street</a></li>
+        </ul>
+      </li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="nav__overlay">
+    <a href="../films.html">Films</a>
+    <a href="../photography/fashion.html">Photography</a>
+    <div class="nav__overlay-sub">
+      <a href="../photography/fashion.html">Fashion</a>
+      <a href="../photography/shows.html">Shows</a>
+      <a href="../photography/portraits.html">Portraits</a>
+      <a href="../photography/street.html">Street</a>
+    </div>
+    <a href="../contact.html">Contact</a>
+    <a href="../about.html">About</a>
+    <div class="nav__overlay-social">
+      <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+
+  <div class="film-hero">
+    <img src="../img/films/the-society-shop.jpg" alt="The Society Shop" loading="eager" />
+    <div class="film-hero__overlay"></div>
+    <div class="film-hero__content">
+      <p class="section__label">Films</p>
+      <h1 class="hero__title" style="font-size: clamp(2.5rem, 6vw, 5rem);">The Society Shop</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <a href="../films.html" class="back-link">← Back to films</a>
+    <div class="film-info">
+      <div>
+        <p class="section__label">About the project</p>
+        <p class="section__body">A fashion campaign for The Society Shop, shot on location at a record bar in Amsterdam. A cast of six models wearing the brand's latest collection — capturing energy, style, and the spirit of the label.</p>
+        <!-- Replace with video embed when available -->
+        <!-- <iframe width="100%" style="aspect-ratio:16/9; border:none;" src="YOUR_VIDEO_URL" allowfullscreen></iframe> -->
+      </div>
+      <div class="film-meta">
+        <div class="film-meta__item">
+          <p class="film-meta__label">Client</p>
+          <p class="film-meta__value">The Society Shop</p>
+        </div>
+        <div class="film-meta__item">
+          <p class="film-meta__label">Type</p>
+          <p class="film-meta__value">Fashion Campaign</p>
+        </div>
+        <div class="film-meta__item">
+          <p class="film-meta__label">Location</p>
+          <p class="film-meta__value">Amsterdam</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__col"><p class="footer__text">bynicolaasjoosten@gmail.com<br />KVK: 91268087<br />Arnhem, The Netherlands</p></div>
+    <div class="footer__col footer__col--center"><div class="footer__social"><a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a><a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a></div></div>
+    <div class="footer__col footer__col--right"><div class="footer__logo"><img src="../img/logo-white.png" alt="Nicolaas Joosten" /></div></div>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>
