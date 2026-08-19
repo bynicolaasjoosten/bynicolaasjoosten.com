@@ -11,39 +11,20 @@
 <body>
 
   <!-- NAV -->
-  <nav class="nav">
-    <a href="index.html" class="nav__brand">
-      <img src="img/logo-white.png" alt="Nicolaas Joosten" />
-    </a>
-    <ul class="nav__links">
-      <li><a href="films.html">Films</a></li>
-      <li class="nav__dropdown">
-        <a href="photography/fashion.html">Photography</a>
-        <ul class="nav__dropdown-menu">
-          <li><a href="photography/fashion.html">Fashion</a></li>
-          <li><a href="photography/shows.html">Shows</a></li>
-          <li><a href="photography/portraits.html">Portraits</a></li>
-          <li><a href="photography/street.html">Street</a></li>
-        </ul>
-      </li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <button class="nav__hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+  <nav class="topnav">
+    <div class="topnav__left">
+      <a href="index.html">Films</a>
+      <a href="stills.html">Stills</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="topnav__center"><a href="index.html">By Nicolaas Joosten</a></div>
+    <button class="topnav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- MOBILE OVERLAY -->
   <div class="nav__overlay">
-    <a href="films.html">Films</a>
-    <a href="photography/fashion.html">Photography</a>
-    <div class="nav__overlay-sub">
-      <a href="photography/fashion.html">Fashion</a>
-      <a href="photography/shows.html">Shows</a>
-      <a href="photography/portraits.html">Portraits</a>
-      <a href="photography/street.html">Street</a>
-    </div>
+    <a href="index.html">Films</a>
+    <a href="stills.html">Stills</a>
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
     <div class="nav__overlay-social">
@@ -125,24 +106,11 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__col">
-      <p class="footer__text">
-        bynicolaasjoosten@gmail.com<br />
-        KVK: 91268087<br />
-        Arnhem, The Netherlands
-      </p>
-    </div>
-    <div class="footer__col footer__col--center">
-      <div class="footer__social">
-        <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
-      </div>
-    </div>
-    <div class="footer__col footer__col--right">
-      <div class="footer__logo">
-        <img src="img/logo-white.png" alt="Nicolaas Joosten" />
-      </div>
+  <footer class="footer-simple">
+    <span>bynicolaasjoosten@gmail.com — Arnhem &amp; Amsterdam</span>
+    <div class="footer-simple__social">
+      <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
     </div>
   </footer>
 
