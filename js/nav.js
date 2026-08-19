@@ -1,3 +1,11 @@
+document.addEventListener('contextmenu', (e) => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
+document.addEventListener('dragstart', (e) => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
 const hamburger = document.querySelector('.topnav__hamburger');
 const overlay   = document.querySelector('.nav__overlay');
 
