@@ -31,6 +31,8 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .topnav__left a {
@@ -351,7 +353,7 @@ a { color: inherit; text-decoration: none; }
 /* ─── Two-column intro (about page) ───────────────────── */
 .meet {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: var(--space-6);
   align-items: center;
   padding: 0 var(--space-5);
@@ -359,8 +361,11 @@ a { color: inherit; text-decoration: none; }
 
 .meet__image img {
   width: 100%;
-  aspect-ratio: 3/4;
+  max-width: 400px;
+  aspect-ratio: 4/5;
   object-fit: cover;
+  margin: 0 auto;
+  display: block;
 }
 
 /* ─── Sections (about / contact / film detail) ────────── */
