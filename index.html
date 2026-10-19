@@ -3,86 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicolaas Joosten — Filmmaker</title>
+  <meta name="description" content="Nicolaas Joosten, filmmaker for brands. Stories behind brands, told cinematically. Fashion, lifestyle and automotive. Arnhem / Amsterdam." />
+  <meta property="og:title" content="Nicolaas Joosten — Filmmaker" />
+  <meta property="og:description" content="Stories behind brands, told cinematically." />
+  <meta property="og:image" content="/img/films/the-society-shop.jpg" />
   <link rel="icon" type="image/png" href="/img/favicon.png" />
-  <title>Nicolaas Joosten — Films</title>
-  <meta name="description" content="Nicolaas Joosten is a Fashion | Event | Portrait Photo/Videographer based in Arnhem &amp; Amsterdam, The Netherlands." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/tokens.css" />
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="preconnect" href="https://player.vimeo.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css?v=2" />
+  <script src="https://cdn.jsdelivr.net/npm/@vimeo/player@2.20.1/dist/player.min.js" defer></script>
+  <script src="/js/site.js?v=2" defer></script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="topnav">
-    <div class="topnav__left">
-      <a href="/" class="active">Films</a>
-      <a href="/stills">Stills</a>
-      <a href="/contact">Contact</a>
-      <a href="/about">About</a>
-    </div>
-    <div class="topnav__center"><a href="/">bynicolaasjoosten</a></div>
-    <button class="topnav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-  </nav>
+  <header class="nav">
+    <a href="/" class="nav__mark">Nicolaas Joosten</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="/" aria-current="page">Films</a>
+      <a href="/stills/">Stills</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+  </header>
 
-  <div class="nav__overlay">
-    <a href="/">Films</a>
-    <a href="/stills">Stills</a>
-    <a href="/contact">Contact</a>
-    <a href="/about">About</a>
-    <div class="nav__overlay-social">
+  <div class="menu" id="menu">
+    <a class="display" href="/"><span>Films</span></a>
+    <a class="display" href="/stills/"><span>Stills</span></a>
+    <a class="display" href="/about/"><span>About</span></a>
+    <a class="display" href="/contact/"><span>Contact</span></a>
+    <div class="menu__foot label">
       <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://cal.com/bynicolaasjoosten/15min" target="_blank" rel="noopener">Book a call</a>
     </div>
   </div>
 
-  <!-- SHOWREEL -->
-  <section class="showreel">
-    <img class="showreel__poster" src="https://i.vimeocdn.com/video/2191726284-00108150fd7ea6bfb970973a8c80c165a9747585688a1e384ae962782b2ee94d-d_960?region=us" alt="Showreel" />
-    <div class="showreel__media" data-vimeo-id="1219512569"></div>
-    <div class="showreel__overlay"></div>
-    <h1 class="showreel__headline">Allround Creative</h1>
-    <p class="showreel__scroll">Scroll ↓</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__poster">
+      <img src="https://i.vimeocdn.com/video/2191726284-00108150fd7ea6bfb970973a8c80c165a9747585688a1e384ae962782b2ee94d-d_1920?region=us" alt="" />
+    </div>
+    <div class="hero__media" data-vimeo="1219512569"></div>
+    <div class="hero__shade"></div>
+
+    <div class="hero__inner">
+      <h1 class="hero__title display lines">
+        <span class="line">Stories behind</span>
+        <span class="line">brands, told</span>
+        <span class="line"><em>cinematically.</em></span>
+      </h1>
+      <div class="hero__side" data-reveal style="--d:.6s">
+        <p class="label">Filmmaker<br>Arnhem / Amsterdam</p>
+        <div class="hero__scroll" aria-hidden="true"></div>
+      </div>
+    </div>
   </section>
 
-  <!-- VIDEO GRID -->
-  <div class="video-grid">
+  <!-- STATEMENT -->
+  <section class="section">
+    <div class="wrap">
+      <p class="label" data-reveal style="margin-bottom:40px">Why I make films</p>
+      <p class="statement display">I capture the stories behind brands with a feeling that stays: films you keep thinking about, wondering why they moved you.</p>
+      <div class="statement-meta">
+        <p data-reveal>Brand films and short campaigns for fashion, lifestyle and automotive.</p>
+        <p data-reveal style="--d:.12s">Director-DOP and edit, from idea to final cut.</p>
+      </div>
+    </div>
+  </section>
 
-    <a href="/films/the-society-shop" class="video-tile">
-      <img src="/img/films/the-society-shop.jpg" alt="The Society Shop" loading="lazy" />
-      <div class="video-tile__overlay"><span class="video-tile__title">The Society Shop</span></div>
-    </a>
+  <!-- WORK -->
+  <section class="section--tight" id="work">
+    <div class="wrap">
+      <div class="work-head">
+        <h2 class="display lines"><span class="line">Selected films</span></h2>
+        <span class="label" data-reveal>04</span>
+      </div>
 
-    <a href="/films/pathe" class="video-tile">
-      <img src="/img/films/pathe.jpg" alt="Pathé" loading="lazy" />
-      <div class="video-tile__overlay"><span class="video-tile__title">Pathé</span></div>
-    </a>
+      <article class="case case--tall">
+        <div class="case__media" data-curtain>
+          <a href="/films/the-society-shop/" class="tile" data-vimeo="1202567980" data-start="2" style="--r:.5625" aria-label="The Society Shop">
+            <img src="/img/films/the-society-shop.jpg" alt="The Society Shop fashion campaign" />
+            <div class="tile__video"></div>
+            <span class="tile__cue">View film</span>
+          </a>
+        </div>
+        <div class="case__meta" data-reveal style="--d:.2s">
+          <p class="case__num">01</p>
+          <h3 class="case__title display"><a href="/films/the-society-shop/">The Society Shop</a></h3>
+          <p class="case__type">Fashion campaign · Utrecht</p>
+        </div>
+      </article>
 
-    <a href="/films/derm-the-possibilities" class="video-tile">
-      <img src="/img/films/derm-the-possibilities.jpg" alt="DERM x The Possibilities" loading="lazy" />
-      <div class="video-tile__overlay"><span class="video-tile__title">DERM x The Possibilities</span></div>
-    </a>
+      <article class="case">
+        <div class="case__media" data-curtain>
+          <a href="/films/pathe/" class="tile" data-vimeo="1202582857" data-start="4" aria-label="Pathé">
+            <img src="/img/films/pathe.jpg" alt="Pathé brand film" />
+            <div class="tile__video"></div>
+            <span class="tile__cue">View film</span>
+          </a>
+        </div>
+        <div class="case__meta" data-reveal style="--d:.2s">
+          <p class="case__num">02</p>
+          <h3 class="case__title display"><a href="/films/pathe/">Pathé</a></h3>
+          <p class="case__type">Brand film</p>
+        </div>
+      </article>
 
-    <a href="/films/airup" class="video-tile">
-      <img src="/img/films/airup.jpg" alt="AirUp" loading="lazy" />
-      <div class="video-tile__overlay"><span class="video-tile__title">AirUp</span></div>
-    </a>
+      <article class="case">
+        <div class="case__media" data-curtain>
+          <a href="/films/derm-the-possibilities/" class="tile" data-vimeo="1196600550" data-start="6" style="--r:1.3333" aria-label="DERM x The Possibilities">
+            <img src="/img/films/derm-the-possibilities.jpg" alt="DERM x The Possibilities boardshorts film" />
+            <div class="tile__video"></div>
+            <span class="tile__cue">View film</span>
+          </a>
+        </div>
+        <div class="case__meta" data-reveal style="--d:.2s">
+          <p class="case__num">03</p>
+          <h3 class="case__title display"><a href="/films/derm-the-possibilities/">DERM × The Possibilities</a></h3>
+          <p class="case__type">Brand collaboration</p>
+        </div>
+      </article>
 
+      <article class="case case--tall">
+        <div class="case__media" data-curtain>
+          <a href="/films/airup/" class="tile" data-vimeo="1219513791" data-start="1" style="--r:.5625" aria-label="AirUp">
+            <img src="/img/films/airup.jpg" alt="AirUp product film" />
+            <div class="tile__video"></div>
+            <span class="tile__cue">View film</span>
+          </a>
+        </div>
+        <div class="case__meta" data-reveal style="--d:.2s">
+          <p class="case__num">04</p>
+          <h3 class="case__title display"><a href="/films/airup/">AirUp</a></h3>
+          <p class="case__type">Product film</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <div class="marquee" aria-label="Clients">
+    <div class="marquee__track">
+      <span class="main">Porsche</span><span class="main">DS</span><span class="main">Mollie</span><span class="main">Sony</span><span class="main">Brams Fruit</span><span>The Society Shop</span><span>Pathé</span><span>DERM</span><span>The Possibilities</span><span>AirUp</span><span>Mr. Monroe</span>
+      <span class="main" aria-hidden="true">Porsche</span><span class="main" aria-hidden="true">DS</span><span class="main" aria-hidden="true">Mollie</span><span class="main" aria-hidden="true">Sony</span><span class="main" aria-hidden="true">Brams Fruit</span><span aria-hidden="true">The Society Shop</span><span aria-hidden="true">Pathé</span><span aria-hidden="true">DERM</span><span aria-hidden="true">The Possibilities</span><span aria-hidden="true">AirUp</span><span aria-hidden="true">Mr. Monroe</span>
+    </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer-simple">
-    <span>Arnhem &amp; Amsterdam</span>
-    <div class="footer-simple__social">
-      <a href="mailto:info@bynicolaasjoosten.com">Email</a>
-      <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://linkedin.com/in/bynicolaasjoosten" target="_blank" rel="noopener">LinkedIn</a>
+  <!-- CTA -->
+  <section class="section cta">
+    <div class="wrap">
+      <p class="label" data-reveal>Work together</p>
+      <a class="cta__link display" href="https://cal.com/bynicolaasjoosten/15min" target="_blank" rel="noopener" data-reveal style="--d:.1s">
+        <span class="u">Book a 15-min call</span><span class="arrow">→</span>
+      </a>
+      <div class="cta__sub" data-reveal style="--d:.2s">
+        <a href="mailto:info@bynicolaasjoosten.com">info@bynicolaasjoosten.com</a>
+        <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">@bynicolaasjoosten</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__row label">
+        <span>Arnhem / Amsterdam</span>
+        <div class="footer__links">
+          <a href="mailto:info@bynicolaasjoosten.com">Email</a>
+          <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://linkedin.com/in/bynicolaasjoosten" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__markwrap" aria-hidden="true"><p class="footer__mark">Nicolaas Joosten</p></div>
     </div>
   </footer>
 
-  <script src="/js/nav.js"></script>
-  <script src="/js/showreel.js"></script>
 </body>
 </html>

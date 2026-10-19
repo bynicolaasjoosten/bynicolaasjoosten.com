@@ -3,123 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/img/favicon.png" />
   <title>Contact — Nicolaas Joosten</title>
-  <meta name="description" content="Get in touch with Nicolaas Joosten for photography and video work." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Book a 15-minute intro call with filmmaker Nicolaas Joosten." />
+  <meta property="og:title" content="Contact — Nicolaas Joosten" />
+  <meta property="og:description" content="Book a 15-minute intro call with filmmaker Nicolaas Joosten." />
+  <meta property="og:image" content="/img/films/the-society-shop.jpg" />
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/tokens.css" />
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="preconnect" href="https://player.vimeo.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css?v=2" />
+  <script src="https://cdn.jsdelivr.net/npm/@vimeo/player@2.20.1/dist/player.min.js" defer></script>
+  <script src="/js/site.js?v=2" defer></script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="topnav">
-    <div class="topnav__left">
+  <header class="nav">
+    <a href="/" class="nav__mark">Nicolaas Joosten</a>
+    <nav class="nav__links" aria-label="Main">
       <a href="/">Films</a>
-      <a href="/stills">Stills</a>
-      <a href="/contact" class="active">Contact</a>
-      <a href="/about">About</a>
-    </div>
-    <div class="topnav__center"><a href="/">bynicolaasjoosten</a></div>
-    <button class="topnav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-  </nav>
+      <a href="/stills/">Stills</a>
+      <a href="/about/">About</a>
+      <a href="/contact/" aria-current="page">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+  </header>
 
-  <div class="nav__overlay">
-    <a href="/">Films</a>
-    <a href="/stills">Stills</a>
-    <a href="/contact">Contact</a>
-    <a href="/about">About</a>
-    <div class="nav__overlay-social">
+  <div class="menu" id="menu">
+    <a class="display" href="/"><span>Films</span></a>
+    <a class="display" href="/stills/"><span>Stills</span></a>
+    <a class="display" href="/about/"><span>About</span></a>
+    <a class="display" href="/contact/"><span>Contact</span></a>
+    <div class="menu__foot label">
       <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://cal.com/bynicolaasjoosten/15min" target="_blank" rel="noopener">Book a call</a>
     </div>
   </div>
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <p class="page-hero__label">Say hello</p>
-    <h1 class="page-hero__title">Let's work<br>together.</h1>
-  </div>
-
-  <!-- CONTACT LAYOUT -->
-  <section class="section">
-    <div class="contact-layout">
-
-      <!-- Info -->
-      <div>
-        <p class="section__body">
-          Interested in working together? Please fill in the form or reach out directly. The more detail you share about your project, the better I can help.
-        </p>
-
-        <div class="contact-info__item">
-          <p class="contact-info__label">Email</p>
-          <p class="contact-info__value">
-            <a href="mailto:bynicolaasjoosten@gmail.com">bynicolaasjoosten@gmail.com</a>
-          </p>
-        </div>
-
-        <div class="contact-info__item">
-          <p class="contact-info__label">Phone / WhatsApp</p>
-          <p class="contact-info__value">
-            <a href="tel:+31681239804">+31 6 81 23 98 04</a>
-          </p>
-        </div>
-
-        <div class="contact-info__item">
-          <p class="contact-info__label">Based in</p>
-          <p class="contact-info__value">Arnhem &amp; Amsterdam, The Netherlands</p>
-        </div>
-
-        <div class="contact-info__item">
-          <p class="contact-info__label">KVK</p>
-          <p class="contact-info__value">91268087</p>
-        </div>
-
-        <div class="contact-info__item" style="margin-top: var(--space-5);">
-          <p class="contact-info__label">Social</p>
-          <p class="contact-info__value">
-            <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">@bynicolaasjoosten</a>
-          </p>
-        </div>
-      </div>
-
-      <!-- Form -->
-      <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form__group">
-          <label class="form__label" for="name">Name</label>
-          <input class="form__input" type="text" id="name" name="name" required autocomplete="name" />
-        </div>
-        <div class="form__group">
-          <label class="form__label" for="email">Email</label>
-          <input class="form__input" type="email" id="email" name="email" required autocomplete="email" />
-        </div>
-        <div class="form__group">
-          <label class="form__label" for="subject">Subject</label>
-          <input class="form__input" type="text" id="subject" name="subject" />
-        </div>
-        <div class="form__group">
-          <label class="form__label" for="message">Message</label>
-          <textarea class="form__textarea" id="message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn">Send message</button>
-      </form>
-
+  <section class="page-head">
+    <div class="wrap">
+      <span class="label" data-reveal>Contact</span>
+      <h1 class="display lines"><span class="line">Let&rsquo;s talk.</span></h1>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer-simple">
-    <span>Arnhem &amp; Amsterdam</span>
-    <div class="footer-simple__social">
-      <a href="mailto:info@bynicolaasjoosten.com">Email</a>
-      <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://linkedin.com/in/bynicolaasjoosten" target="_blank" rel="noopener">LinkedIn</a>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact-list">
+        <div class="contact-row" data-reveal><p class="label">Intro call</p><a class="val" href="https://cal.com/bynicolaasjoosten/15min" target="_blank" rel="noopener">Book 15 minutes →</a></div>
+        <div class="contact-row" data-reveal><p class="label">Email</p><a class="val" href="mailto:info@bynicolaasjoosten.com">info@bynicolaasjoosten.com</a></div>
+        <div class="contact-row" data-reveal><p class="label">Phone / WhatsApp</p><a class="val" href="tel:+31681239804">+31 6 81 23 98 04</a></div>
+        <div class="contact-row" data-reveal><p class="label">Instagram</p><a class="val" href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">@bynicolaasjoosten</a></div>
+        <div class="contact-row" data-reveal><p class="label">Based in</p><p class="val">Arnhem / Amsterdam</p></div>
+      </div>
+      <p class="label" style="margin-top:40px">KvK 91268087</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__row label">
+        <span>Arnhem / Amsterdam</span>
+        <div class="footer__links">
+          <a href="mailto:info@bynicolaasjoosten.com">Email</a>
+          <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://linkedin.com/in/bynicolaasjoosten" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__markwrap" aria-hidden="true"><p class="footer__mark">Nicolaas Joosten</p></div>
     </div>
   </footer>
 
-  <script src="/js/nav.js"></script>
 </body>
 </html>
