@@ -3,90 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/img/favicon.png" />
   <title>About — Nicolaas Joosten</title>
-  <meta name="description" content="Nicolaas Joosten, 22, photographer and content creator focusing on fashion, portraits and music events. Based in Arnhem &amp; Amsterdam." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Nicolaas Joosten, filmmaker for brands. Director-DOP and edit, based in Arnhem and Amsterdam." />
+  <meta property="og:title" content="About — Nicolaas Joosten" />
+  <meta property="og:description" content="Nicolaas Joosten, filmmaker for brands. Director-DOP and edit, based in Arnhem and Amsterdam." />
+  <meta property="og:image" content="/img/portrait-2.jpg" />
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/tokens.css" />
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="preconnect" href="https://player.vimeo.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css?v=2" />
+  <script src="https://cdn.jsdelivr.net/npm/@vimeo/player@2.20.1/dist/player.min.js" defer></script>
+  <script src="/js/site.js?v=2" defer></script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="topnav">
-    <div class="topnav__left">
+  <header class="nav">
+    <a href="/" class="nav__mark">Nicolaas Joosten</a>
+    <nav class="nav__links" aria-label="Main">
       <a href="/">Films</a>
-      <a href="/stills">Stills</a>
-      <a href="/contact">Contact</a>
-      <a href="/about" class="active">About</a>
-    </div>
-    <div class="topnav__center"><a href="/">bynicolaasjoosten</a></div>
-    <button class="topnav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-  </nav>
+      <a href="/stills/">Stills</a>
+      <a href="/about/" aria-current="page">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+  </header>
 
-  <div class="nav__overlay">
-    <a href="/">Films</a>
-    <a href="/stills">Stills</a>
-    <a href="/contact">Contact</a>
-    <a href="/about">About</a>
-    <div class="nav__overlay-social">
+  <div class="menu" id="menu">
+    <a class="display" href="/"><span>Films</span></a>
+    <a class="display" href="/stills/"><span>Stills</span></a>
+    <a class="display" href="/about/"><span>About</span></a>
+    <a class="display" href="/contact/"><span>Contact</span></a>
+    <div class="menu__foot label">
       <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://cal.com/bynicolaasjoosten/15min" target="_blank" rel="noopener">Book a call</a>
     </div>
   </div>
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <p class="page-hero__label">Who I am</p>
-    <h1 class="page-hero__title">About me.</h1>
-  </div>
+  <section class="page-head">
+    <div class="wrap">
+      <span class="label" data-reveal>About</span>
+      <h1 class="display lines"><span class="line">Nicolaas</span><span class="line">Joosten</span></h1>
+    </div>
+  </section>
 
-  <!-- BIO -->
   <section class="section">
-    <div class="meet">
-      <div class="meet__text">
-        <p class="section__label">Biography</p>
-        <h2 class="section__title">Nicolaas<br>Joosten.</h2>
-        <p class="section__body">
-          I'm Nicolaas Joosten, 22 years old, a photographer and content creator focusing on fashion, portraits and (music) events. Studying creative business in Amsterdam. Passionate about capturing the right moments and joy in photos.
-        </p>
-        <a href="/contact" class="btn">Get in touch</a>
-      </div>
-      <div class="meet__image">
-        <img src="/img/portrait-2.jpg" alt="Nicolaas Joosten" loading="lazy" />
+    <div class="wrap about-grid">
+      <div class="portrait" data-curtain><img src="/img/portrait-2.jpg" alt="Nicolaas Joosten" /></div>
+      <div class="copy">
+        <p class="display" data-reveal>Filmmaker for brands. Director-DOP and edit.</p>
+        <p data-reveal style="--d:.1s">I capture the stories behind brands with a feeling that stays: films you keep thinking about, wondering why they moved you.</p>
+        <p data-reveal style="--d:.15s">Fashion, lifestyle and automotive. Based in Arnhem and Amsterdam.</p>
+        <ul class="points">
+          <li data-reveal><span>01</span>I understand why the film has to work.</li>
+          <li data-reveal style="--d:.08s"><span>02</span>I think along and solve problems on set.</li>
+          <li data-reveal style="--d:.16s"><span>03</span>A taste of my own, never generic.</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section">
-    <div class="about-cta">
-      <div>
-        <p class="section__label">Work together</p>
-        <h2 class="section__title">Let's create!</h2>
-      </div>
-      <div>
-        <p class="section__body">
-          Need new brand photos or a video? Let's collaborate for outstanding results. With a focus on storytelling, we can capture your brand's essence and engage your audience. Whether for a campaign, social media, or your website, I can help you create THE visuals. Contact me to discuss.
-        </p>
-        <a href="/contact" class="btn">Contact me</a>
+  <section class="section cta">
+    <div class="wrap">
+      <p class="label" data-reveal>Work together</p>
+      <a class="cta__link display" href="https://cal.com/bynicolaasjoosten/15min" target="_blank" rel="noopener" data-reveal style="--d:.1s">
+        <span class="u">Book a 15-min call</span><span class="arrow">→</span>
+      </a>
+      <div class="cta__sub" data-reveal style="--d:.2s">
+        <a href="mailto:info@bynicolaasjoosten.com">info@bynicolaasjoosten.com</a>
+        <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">@bynicolaasjoosten</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer-simple">
-    <span>Arnhem &amp; Amsterdam</span>
-    <div class="footer-simple__social">
-      <a href="mailto:info@bynicolaasjoosten.com">Email</a>
-      <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://linkedin.com/in/bynicolaasjoosten" target="_blank" rel="noopener">LinkedIn</a>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__row label">
+        <span>Arnhem / Amsterdam</span>
+        <div class="footer__links">
+          <a href="mailto:info@bynicolaasjoosten.com">Email</a>
+          <a href="https://instagram.com/bynicolaasjoosten" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/@bynicolaasjoosten" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://linkedin.com/in/bynicolaasjoosten" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__markwrap" aria-hidden="true"><p class="footer__mark">Nicolaas Joosten</p></div>
     </div>
   </footer>
 
-  <script src="/js/nav.js"></script>
 </body>
 </html>
