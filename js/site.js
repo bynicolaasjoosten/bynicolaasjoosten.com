@@ -173,7 +173,7 @@
     grid.addEventListener('click', e => {
       const src = e.target.closest('figure')?.querySelector('img');
       if (!src) return;
-      img.src = src.currentSrc || src.src;
+      img.src = src.dataset.full || src.currentSrc || src.src;
       img.alt = src.alt;
       lb.classList.add('open');
     });
