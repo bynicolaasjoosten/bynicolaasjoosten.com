@@ -83,22 +83,30 @@ a { color: inherit; text-decoration: none; }
   z-index: 80;
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px var(--gutter);
-  color: #F2F0EC;
-  mix-blend-mode: difference;
+  color: var(--ink);
   view-transition-name: nav;
 }
-.nav__mark {
+/* Soft dark scrim with a fading blur, so the nav reads on any image */
+.nav::before {
+  content: ''; position: absolute; inset: 0 0 -48px 0; z-index: -1;
+  background: linear-gradient(to bottom, rgba(11,11,11,.72), rgba(11,11,11,.35) 55%, rgba(11,11,11,0));
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+          mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  pointer-events: none;
+}
+.nav__mark,
+.nav__links a,
+.nav__toggle {
+  font-family: 'Geist Mono', ui-monospace, monospace;
   font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 .nav__links { display: flex; gap: 36px; align-items: center; }
 .nav__links a {
   position: relative;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
   opacity: 0.75;
   transition: opacity 0.4s var(--ease);
 }
@@ -114,7 +122,6 @@ a { color: inherit; text-decoration: none; }
 .nav__toggle {
   display: none;
   background: none; border: 0; color: inherit; cursor: pointer;
-  font: inherit; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   padding: 8px 0;
 }
 
@@ -324,7 +331,7 @@ a { color: inherit; text-decoration: none; }
 .footer__links { display: flex; gap: 28px; flex-wrap: wrap; }
 .footer__links a { color: var(--ink-2); transition: color 0.4s; }
 .footer__links a:hover { color: var(--ink); }
-.footer__markwrap { position: relative; margin-top: 48px; height: calc(var(--mark-size, 9vw) * 1.02); overflow: hidden; }
+.footer__markwrap { position: relative; margin-top: 48px; height: calc(var(--mark-size, 9vw) * 1.2); }
 .footer__mark {
   font-family: var(--font-display);
   font-weight: 600;
@@ -341,9 +348,12 @@ a { color: inherit; text-decoration: none; }
           mask-image: linear-gradient(to bottom, #000 45%, transparent 92%); }
 .footer__blur {
   position: absolute; left: 0; top: 0;
+  /* padding gives the blur room inside the mask box, so no hard edges on the sides or bottom */
+  padding: 0 0.3em 0.35em;
+  margin-left: calc(-0.05em - 0.3em);
   filter: blur(9px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 40%, #000 88%);
-          mask-image: linear-gradient(to bottom, transparent 40%, #000 88%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, #000 56%, #000 68%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 30%, #000 56%, #000 68%, transparent 100%);
   pointer-events: none;
 }
 
