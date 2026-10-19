@@ -9,30 +9,21 @@
     heroVideo();
     tileVideos();
     lightbox();
-    logo();
     fitMark();
     addEventListener('resize', fitMark);
     document.fonts && document.fonts.ready.then(fitMark);
   });
-
-  /* Logo stripes ripple on hover / tap */
-  function logo() {
-    const el = document.querySelector('.logo-anim');
-    if (!el || reduce) return;
-    const play = () => {
-      if (el.classList.contains('wave')) return;
-      el.classList.add('wave');
-      setTimeout(() => el.classList.remove('wave'), 1600);
-    };
-    el.addEventListener('mouseenter', play);
-    el.addEventListener('click', play);
-  }
 
   /* Footer wordmark fills the full width */
   function fitMark() {
     const wrap = document.querySelector('.footer__markwrap');
     const mark = wrap && wrap.querySelector('.footer__mark');
     if (!mark) return;
+    if (!wrap.querySelector('.footer__blur')) {
+      const twin = mark.cloneNode(true);
+      twin.className = 'footer__mark footer__blur';
+      wrap.appendChild(twin);
+    }
     wrap.style.setProperty('--mark-size', '100px');
     const ratio = wrap.clientWidth / mark.getBoundingClientRect().width;
     wrap.style.setProperty('--mark-size', (100 * ratio).toFixed(2) + 'px');
@@ -63,7 +54,7 @@
 
   /* ---------- Reveal on scroll ---------- */
   function reveals() {
-    const els = document.querySelectorAll('[data-reveal], .lines, [data-curtain], .logo-anim');
+    const els = document.querySelectorAll('[data-reveal], .lines, [data-curtain]');
     if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('is-in')); return; }
     // Clipped elements never "intersect", so curtains are watched through their parent
     const io = new IntersectionObserver(entries => {
