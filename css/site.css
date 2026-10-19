@@ -336,11 +336,14 @@ a { color: inherit; text-decoration: none; }
   margin-left: -0.05em;
   color: var(--ink);
 }
-.footer__markwrap::after {
-  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 42%;
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(10px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 85%);
-          mask-image: linear-gradient(to bottom, transparent, #000 85%);
+.footer__mark { position: relative;
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 92%);
+          mask-image: linear-gradient(to bottom, #000 45%, transparent 92%); }
+.footer__blur {
+  position: absolute; left: 0; top: 0;
+  filter: blur(9px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 40%, #000 88%);
+          mask-image: linear-gradient(to bottom, transparent 40%, #000 88%);
   pointer-events: none;
 }
 
@@ -443,20 +446,3 @@ a { color: inherit; text-decoration: none; }
 .players .player + .player { margin-top: 0; }
 @media (max-width: 760px) { .players { grid-template-columns: 1fr; } .players .player--tall { max-width: 420px; margin: 0 auto; width: 100%; } }
 .marquee__track span.main { color: var(--ink); }
-
-/* ---------- Logo: stripes build the mark, ripple on hover ---------- */
-.logo-anim { width: clamp(88px, 11vw, 150px); margin-top: 64px; cursor: crosshair; }
-.logo-anim svg { display: block; width: 100%; height: auto; overflow: visible; }
-.logo-anim .s {
-  transform-box: fill-box;
-  transition: transform 1.1s var(--ease);
-  transition-delay: calc(var(--i) * 45ms);
-}
-.logo-anim .l { transform-origin: left center; }
-.logo-anim .r { transform-origin: right center; }
-.js .logo-anim .s { transform: scaleX(0); }
-.js .logo-anim.is-in .s { transform: scaleX(1); }
-.logo-anim.is-in.wave .l { animation: wave-l 0.9s var(--ease) calc(var(--i) * 40ms) both; }
-.logo-anim.is-in.wave .r { animation: wave-r 0.9s var(--ease) calc(var(--i) * 40ms) both; }
-@keyframes wave-l { 50% { transform: translateX(-18%) scaleX(0.82); } }
-@keyframes wave-r { 50% { transform: translateX(18%) scaleX(0.82); } }
