@@ -1,3 +1,9 @@
+/* ---------- Fonts (self-hosted, no Google requests) ---------- */
+@font-face { font-family: 'Geist Mono'; font-style: normal; font-weight: 400 500; font-display: swap; src: url('/fonts/geist-mono-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Geist Mono'; font-style: normal; font-weight: 400 500; font-display: swap; src: url('/fonts/geist-mono-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Inter Tight'; font-style: normal; font-weight: 300 600; font-display: swap; src: url('/fonts/inter-tight-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Inter Tight'; font-style: normal; font-weight: 300 600; font-display: swap; src: url('/fonts/inter-tight-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 /* ============================================================
    bynicolaasjoosten — preview
    Calm, cinematic, slow. Motion is soft and never in the way.
@@ -456,3 +462,14 @@ a { color: inherit; text-decoration: none; }
 .players .player + .player { margin-top: 0; }
 @media (max-width: 760px) { .players { grid-template-columns: 1fr; } .players .player--tall { max-width: 420px; margin: 0 auto; width: 100%; } }
 .marquee__track span.main { color: var(--ink); }
+
+/* ---------- Legal (privacy) ---------- */
+.legal { max-width: 720px; border-top: 1px solid var(--line); margin-top: 72px; padding-top: 32px; color: var(--ink-2); line-height: 1.7; }
+.legal h2 { color: var(--ink); font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: -0.02em; font-size: clamp(22px, 2vw, 28px); margin: 48px 0 12px; }
+.legal p + p, .legal p + ul, .legal ul + p { margin-top: 12px; }
+.legal ul { padding-left: 1.1em; }
+.legal li + li { margin-top: 8px; }
+.legal strong { color: var(--ink); font-weight: 500; }
+.legal a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-2); }
+.footer__legal { display: inline-block; margin-top: 16px; font-size: 9px; color: var(--ink-3); opacity: 0.7; transition: opacity 0.4s var(--ease); }
+.footer__legal:hover { opacity: 1; }

@@ -16,13 +16,11 @@
   <link rel="icon" type="image/png" href="/img/favicon.png" />
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://player.vimeo.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css?v=9" />
+  <link rel="preload" href="/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/css/site.css?v=10" />
   <script src="https://cdn.jsdelivr.net/npm/@vimeo/player@2.20.1/dist/player.min.js" defer></script>
-  <script src="/js/site.js?v=9" defer></script>
+  <script src="/js/site.js?v=10" defer></script>
 </head>
 <body>
 
@@ -30,7 +28,7 @@
     <a href="/" class="nav__mark">ByNicolaasJoosten</a>
     <nav class="nav__links" aria-label="Main">
       <a href="/" aria-current="page">Films</a>
-      <a href="/stills/">Stills</a>
+      <a href="/stills/">Photos</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact</a>
     </nav>
@@ -39,7 +37,7 @@
 
   <div class="menu" id="menu">
     <a class="display" href="/"><span>Films</span></a>
-    <a class="display" href="/stills/"><span>Stills</span></a>
+    <a class="display" href="/stills/"><span>Photos</span></a>
     <a class="display" href="/about/"><span>About</span></a>
     <a class="display" href="/contact/"><span>Contact</span></a>
     <div class="menu__foot label">
@@ -93,6 +91,7 @@
         </div>
       </div>
       <div class="footer__markwrap" aria-hidden="true"><p class="footer__mark" data-text="bynicolaasjoosten">bynicolaasjoosten</p></div>
+      <a class="footer__legal label" href="/privacy/">Privacy</a>
     </div>
   </footer>
 
