@@ -1,3 +1,4 @@
 facturen/
 .claude/settings.local.json
 shoots/
+.DS_Store

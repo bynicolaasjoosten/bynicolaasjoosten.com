@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /photography/
+
+Sitemap: https://www.bynicolaasjoosten.com/sitemap.xml
